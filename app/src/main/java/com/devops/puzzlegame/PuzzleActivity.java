@@ -26,6 +26,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import android.net.Uri;
 
 import static java.lang.Math.abs;
 import java.util.Collections;
@@ -38,6 +39,7 @@ import static java.lang.Math.abs;
 public class PuzzleActivity extends AppCompatActivity {
     ArrayList<PuzzlePieces> pieces;
     String mCurrentPhotoPath;
+    String mCurrentPhotoUri;
 
 
     @Override
@@ -51,6 +53,7 @@ public class PuzzleActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final String assetName = intent.getStringExtra("assetName");
         mCurrentPhotoPath = intent.getStringExtra("mCurrentPhotoPath");
+        mCurrentPhotoUri = intent.getStringExtra("mCurrentPhotoUri");
 
         // run image related code after the view was laid out
         // to have all dimensions calculated
@@ -61,6 +64,8 @@ public class PuzzleActivity extends AppCompatActivity {
                     setPicFromAsset(assetName, imageView);
                 } else if (mCurrentPhotoPath != null) {
                     setPicFromPath(mCurrentPhotoPath, imageView);
+                } else if (mCurrentPhotoUri != null) {
+                    imageView.setImageURI(Uri.parse(mCurrentPhotoUri));
 
                 }
                 pieces = splitImage();
