@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e40c2c</color>
+    <color name="colorPrimaryDark">#09acf2</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="warna_putih">#fff</color>
+    <color name="warna_hitam">#000</color>
+</resources>
