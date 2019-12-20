@@ -58,4 +58,3 @@ pipeline {
 }
 
   
-# test trigere2
